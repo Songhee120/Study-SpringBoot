@@ -4,7 +4,13 @@ import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 
+import java.util.List;
 import java.util.Optional;
+
+/*
+* Repository 같은 경우는 조금더 데이터베이스에 가까운 이름
+* Service 같은 경우는 비지니스에 가까운 이름
+*/
 
 public class MemberService {
     private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -24,6 +30,17 @@ public class MemberService {
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
+    }
+
+    /*
+    * 전체 회원 조회
+    */
+    public List<Member> findMembers(){
+        return memberRepository.findAll();
+    }
+
+    public Optional<Member> findOne(Long memberId){
+        return memberRepository.findById(memberId);
     }
 
 

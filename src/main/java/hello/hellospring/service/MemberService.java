@@ -3,6 +3,7 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,8 @@ import java.util.Optional;
 * Service 같은 경우는 비지니스에 가까운 이름
 */
 
+// @Service를 통해 스프링 컨테이너에 등록
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 

@@ -10,6 +10,9 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+// 단위 테스트: 스프링 통합 테스트보다 좋은 테스트일 확률이 높음
+// 불가피하게 스프링을 올려야 될 경우라면 개발이 잘못된거 일수도..
+
 class MemberServiceTest {
 
     MemberService memberService;

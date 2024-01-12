@@ -13,8 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@SpringBootTest
-@Transactional
+// 스프링 통합 테스트
+
+@SpringBootTest // 스프링 컨테이너와 테스트 함께 실행
+@Transactional  // 테스트 완료 후 항상 롤백
 class MemberServiceIntegrationTest {
 
     // 테스트 코드 작성할 때는 필드에 바로 주입해줘도 됨
